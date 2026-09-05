@@ -1,0 +1,54 @@
+[
+  {
+    "feature": "amount",
+    "mean_abs_shap": 0.73881
+  },
+  {
+    "feature": "hour_of_day",
+    "mean_abs_shap": 0.44588
+  },
+  {
+    "feature": "merchant_category_electronics",
+    "mean_abs_shap": 0.38086
+  },
+  {
+    "feature": "amount_zscore",
+    "mean_abs_shap": 0.26361
+  },
+  {
+    "feature": "merchant_category_online_retail",
+    "mean_abs_shap": 0.16592
+  },
+  {
+    "feature": "day_of_week",
+    "mean_abs_shap": 0.10947
+  },
+  {
+    "feature": "txn_velocity_1h",
+    "mean_abs_shap": 0.09658
+  },
+  {
+    "feature": "new_device",
+    "mean_abs_shap": 0.07063
+  },
+  {
+    "feature": "is_night",
+    "mean_abs_shap": 0.05854
+  },
+  {
+    "feature": "merchant_category_entertainment",
+    "mean_abs_shap": 0.05609
+  },
+  {
+    "feature": "merchant_category_travel",
+    "mean_abs_shap": 0.05522
+  },
+  {
+    "feature": "merchant_category_grocery",
+    "mean_abs_shap": 0.02374
+  },
+  {
+    "feature": "geo_mismatch",
+    "mean_abs_shap": 0.0
+  }
+]

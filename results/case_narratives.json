@@ -1,0 +1,83 @@
+[
+  {
+    "case_id": 1824,
+    "transaction_id": "TXN00120925",
+    "customer_id": "CUST000978",
+    "amount": 66.63,
+    "merchant_category": "online_retail",
+    "model_score": 0.778,
+    "contributing_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "hour_of_day",
+        "z_score": 1.66,
+        "direction": "above normal"
+      },
+      {
+        "feature": "is_night",
+        "z_score": 1.57,
+        "direction": "above normal"
+      }
+    ],
+    "summary": "Transaction TXN00120925 for customer CUST000978 was flagged with a model score of 0.778. Primary contributing factors: geo_mismatch (above normal, z=4.35), hour_of_day (above normal, z=1.66), is_night (above normal, z=1.57). Merchant category: online_retail, amount: $66.63.",
+    "recommended_action": "Confirm cardholder identity via out-of-band verification before restoring full account privileges; monitor customer's account for 30 days for recurrence; consider temporary velocity limits on new-device transactions for this customer."
+  },
+  {
+    "case_id": 1828,
+    "transaction_id": "TXN00121003",
+    "customer_id": "CUST004904",
+    "amount": 26.29,
+    "merchant_category": "travel",
+    "model_score": 0.893,
+    "contributing_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "is_night",
+        "z_score": 1.57,
+        "direction": "above normal"
+      },
+      {
+        "feature": "hour_of_day",
+        "z_score": -1.52,
+        "direction": "below normal"
+      }
+    ],
+    "summary": "Transaction TXN00121003 for customer CUST004904 was flagged with a model score of 0.893. Primary contributing factors: geo_mismatch (above normal, z=4.35), is_night (above normal, z=1.57), hour_of_day (below normal, z=-1.52). Merchant category: travel, amount: $26.29.",
+    "recommended_action": "Confirm cardholder identity via out-of-band verification before restoring full account privileges; monitor customer's account for 30 days for recurrence; consider temporary velocity limits on new-device transactions for this customer."
+  },
+  {
+    "case_id": 1944,
+    "transaction_id": "TXN00124754",
+    "customer_id": "CUST001676",
+    "amount": 91.37,
+    "merchant_category": "pharmacy",
+    "model_score": 0.541,
+    "contributing_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "new_device",
+        "z_score": 3.42,
+        "direction": "above normal"
+      },
+      {
+        "feature": "amount",
+        "z_score": 0.76,
+        "direction": "above normal"
+      }
+    ],
+    "summary": "Transaction TXN00124754 for customer CUST001676 was flagged with a model score of 0.541. Primary contributing factors: geo_mismatch (above normal, z=4.35), new_device (above normal, z=3.42), amount (above normal, z=0.76). Merchant category: pharmacy, amount: $91.37.",
+    "recommended_action": "Confirm cardholder identity via out-of-band verification before restoring full account privileges; monitor customer's account for 30 days for recurrence; consider temporary velocity limits on new-device transactions for this customer."
+  }
+]

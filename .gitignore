@@ -1,0 +1,42 @@
+# ---- Raw / large data (not redistributable, and far over GitHub size limits) ----
+data/raw_ieee_cis/
+data/transactions.csv
+data/features.csv
+*.zip
+
+# Any large generated CSVs
+results/test_scored.csv
+results/test_scored_real.csv
+
+# ---- Trained model binaries (regenerate with train_models*.py) ----
+*.pkl
+*.joblib
+
+# ---- Alert / case database (regenerate with case_tracking.py) ----
+results/fraudsentry.db
+*.sqlite
+*.sqlite3
+
+# ---- Scratch patch scripts from the build session ----
+patch_fix*.py
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- Environments ----
+.venv/
+venv/
+env/
+.python-version
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# NOTE: results/ is deliberately NOT ignored — the plots, metrics JSON and
+# audit JSON in results/ are the evidence this project is built around.

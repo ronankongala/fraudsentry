@@ -1,0 +1,59 @@
+{
+  "overall_threshold": 0.6311,
+  "subgroups": {
+    "merchant_category": [
+      {
+        "group": "electronics",
+        "n_legitimate_txns": 10492,
+        "n_flagged": 2509,
+        "false_positive_rate": 0.2391
+      },
+      {
+        "group": "grocery",
+        "n_legitimate_txns": 3318,
+        "n_flagged": 586,
+        "false_positive_rate": 0.1766
+      },
+      {
+        "group": "entertainment",
+        "n_legitimate_txns": 3136,
+        "n_flagged": 87,
+        "false_positive_rate": 0.0277
+      },
+      {
+        "group": "travel",
+        "n_legitimate_txns": 5239,
+        "n_flagged": 14,
+        "false_positive_rate": 0.0027
+      },
+      {
+        "group": "online_retail",
+        "n_legitimate_txns": 91859,
+        "n_flagged": 225,
+        "false_positive_rate": 0.0024
+      }
+    ],
+    "geo_mismatch": [
+      {
+        "group": "0",
+        "n_legitimate_txns": 114044,
+        "n_flagged": 3421,
+        "false_positive_rate": 0.03
+      }
+    ],
+    "new_device": [
+      {
+        "group": "0",
+        "n_legitimate_txns": 65168,
+        "n_flagged": 2414,
+        "false_positive_rate": 0.037
+      },
+      {
+        "group": "1",
+        "n_legitimate_txns": 48876,
+        "n_flagged": 1007,
+        "false_positive_rate": 0.0206
+      }
+    ]
+  }
+}

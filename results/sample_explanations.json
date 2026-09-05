@@ -1,0 +1,112 @@
+[
+  {
+    "transaction_id": "TXN00141548",
+    "is_fraud_actual": 0,
+    "rf_score": 0.9852,
+    "top_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "new_device",
+        "z_score": 3.42,
+        "direction": "above normal"
+      },
+      {
+        "feature": "hour_of_day",
+        "z_score": 1.52,
+        "direction": "above normal"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN00122176",
+    "is_fraud_actual": 0,
+    "rf_score": 0.981,
+    "top_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "new_device",
+        "z_score": 3.42,
+        "direction": "above normal"
+      },
+      {
+        "feature": "txn_velocity_1h",
+        "z_score": 1.41,
+        "direction": "above normal"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN00147629",
+    "is_fraud_actual": 0,
+    "rf_score": 0.9802,
+    "top_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "is_night",
+        "z_score": 1.57,
+        "direction": "above normal"
+      },
+      {
+        "feature": "hour_of_day",
+        "z_score": -1.23,
+        "direction": "below normal"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN00123191",
+    "is_fraud_actual": 1,
+    "rf_score": 0.9799,
+    "top_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "new_device",
+        "z_score": 3.42,
+        "direction": "above normal"
+      },
+      {
+        "feature": "amount",
+        "z_score": 0.85,
+        "direction": "above normal"
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN00140929",
+    "is_fraud_actual": 0,
+    "rf_score": 0.9798,
+    "top_factors": [
+      {
+        "feature": "geo_mismatch",
+        "z_score": 4.35,
+        "direction": "above normal"
+      },
+      {
+        "feature": "is_night",
+        "z_score": 1.57,
+        "direction": "above normal"
+      },
+      {
+        "feature": "hour_of_day",
+        "z_score": -1.23,
+        "direction": "below normal"
+      }
+    ]
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "transaction_id": "TXN3549143",
+    "is_fraud_actual": 0,
+    "xgb_score": 0.9787,
+    "top_shap_factors": [
+      {
+        "feature": "merchant_category_grocery",
+        "shap_value": 0.9618
+      },
+      {
+        "feature": "txn_velocity_1h",
+        "shap_value": 0.955
+      },
+      {
+        "feature": "hour_of_day",
+        "shap_value": 0.8928
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN3539075",
+    "is_fraud_actual": 0,
+    "xgb_score": 0.9728,
+    "top_shap_factors": [
+      {
+        "feature": "amount_zscore",
+        "shap_value": 1.6036
+      },
+      {
+        "feature": "merchant_category_electronics",
+        "shap_value": 1.3446
+      },
+      {
+        "feature": "amount",
+        "shap_value": 0.6616
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN3549142",
+    "is_fraud_actual": 0,
+    "xgb_score": 0.9717,
+    "top_shap_factors": [
+      {
+        "feature": "hour_of_day",
+        "shap_value": 0.9126
+      },
+      {
+        "feature": "txn_velocity_1h",
+        "shap_value": 0.8347
+      },
+      {
+        "feature": "merchant_category_grocery",
+        "shap_value": 0.8317
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN3496068",
+    "is_fraud_actual": 1,
+    "xgb_score": 0.9689,
+    "top_shap_factors": [
+      {
+        "feature": "merchant_category_electronics",
+        "shap_value": 1.1135
+      },
+      {
+        "feature": "amount_zscore",
+        "shap_value": 0.8159
+      },
+      {
+        "feature": "hour_of_day",
+        "shap_value": 0.7693
+      }
+    ]
+  },
+  {
+    "transaction_id": "TXN3516654",
+    "is_fraud_actual": 0,
+    "xgb_score": 0.9687,
+    "top_shap_factors": [
+      {
+        "feature": "amount",
+        "shap_value": 1.4045
+      },
+      {
+        "feature": "merchant_category_grocery",
+        "shap_value": 0.8796
+      },
+      {
+        "feature": "hour_of_day",
+        "shap_value": 0.8116
+      }
+    ]
+  }
+]

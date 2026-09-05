@@ -1,0 +1,58 @@
+[
+  {
+    "model": "LogisticRegression",
+    "roc_auc": 0.7419,
+    "average_precision": 0.0828,
+    "recall_at_3pct_fpr": 0.0546,
+    "achieved_fpr": 0.03,
+    "threshold_used": 0.8123,
+    "confusion_matrix": {
+      "tn": 110625,
+      "fp": 3419,
+      "fn": 3842,
+      "tp": 222
+    }
+  },
+  {
+    "model": "RandomForest (imblearn SMOTE)",
+    "roc_auc": 0.7484,
+    "average_precision": 0.1194,
+    "recall_at_3pct_fpr": 0.1597,
+    "achieved_fpr": 0.03,
+    "threshold_used": 0.7827,
+    "confusion_matrix": {
+      "tn": 110624,
+      "fp": 3420,
+      "fn": 3415,
+      "tp": 649
+    }
+  },
+  {
+    "model": "XGBoost (imblearn SMOTE)",
+    "roc_auc": 0.7081,
+    "average_precision": 0.0865,
+    "recall_at_3pct_fpr": 0.1356,
+    "achieved_fpr": 0.03,
+    "threshold_used": 0.6311,
+    "confusion_matrix": {
+      "tn": 110623,
+      "fp": 3421,
+      "fn": 3513,
+      "tp": 551
+    }
+  },
+  {
+    "model": "IsolationForest (unsupervised)",
+    "roc_auc": 0.689,
+    "average_precision": 0.0649,
+    "recall_at_3pct_fpr": 0.0581,
+    "achieved_fpr": 0.03,
+    "threshold_used": 0.5866,
+    "confusion_matrix": {
+      "tn": 110623,
+      "fp": 3421,
+      "fn": 3828,
+      "tp": 236
+    }
+  }
+]

@@ -1,0 +1,13 @@
+# Base (already used in the offline/sandbox version)
+pandas>=2.0
+numpy>=1.24
+scikit-learn>=1.3
+
+# Real libraries this project's offline version substituted for --
+# install these to run train_models_real.py / explainability_real.py
+xgboost>=2.0
+shap>=0.44
+imbalanced-learn>=0.12
+
+# Needed to download the real IEEE-CIS dataset via load_ieee_cis.py
+kaggle>=1.6

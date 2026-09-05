@@ -1,0 +1,31 @@
+{
+  "total_confirmed_cases": 25,
+  "top_merchant_categories": [
+    [
+      "electronics",
+      6
+    ],
+    [
+      "online_retail",
+      5
+    ],
+    [
+      "jewelry",
+      5
+    ],
+    [
+      "pharmacy",
+      2
+    ],
+    [
+      "grocery",
+      2
+    ]
+  ],
+  "pct_geo_mismatch": 96.0,
+  "pct_new_device": 24.0,
+  "pct_at_night": 72.0,
+  "avg_amount": 56.69,
+  "avg_txn_velocity_1h": 4.48,
+  "unique_customers_affected": 25
+}

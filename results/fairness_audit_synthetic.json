@@ -1,0 +1,107 @@
+{
+  "overall_threshold": 0.3404,
+  "subgroups": {
+    "merchant_category": [
+      {
+        "group": "online_retail",
+        "n_legitimate_txns": 2940,
+        "n_flagged": 202,
+        "false_positive_rate": 0.0687
+      },
+      {
+        "group": "travel",
+        "n_legitimate_txns": 2990,
+        "n_flagged": 161,
+        "false_positive_rate": 0.0538
+      },
+      {
+        "group": "jewelry",
+        "n_legitimate_txns": 2951,
+        "n_flagged": 149,
+        "false_positive_rate": 0.0505
+      },
+      {
+        "group": "electronics",
+        "n_legitimate_txns": 3031,
+        "n_flagged": 127,
+        "false_positive_rate": 0.0419
+      },
+      {
+        "group": "entertainment",
+        "n_legitimate_txns": 3031,
+        "n_flagged": 84,
+        "false_positive_rate": 0.0277
+      },
+      {
+        "group": "pharmacy",
+        "n_legitimate_txns": 2888,
+        "n_flagged": 58,
+        "false_positive_rate": 0.0201
+      },
+      {
+        "group": "grocery",
+        "n_legitimate_txns": 3087,
+        "n_flagged": 61,
+        "false_positive_rate": 0.0198
+      },
+      {
+        "group": "gas_station",
+        "n_legitimate_txns": 3018,
+        "n_flagged": 33,
+        "false_positive_rate": 0.0109
+      },
+      {
+        "group": "restaurant",
+        "n_legitimate_txns": 2954,
+        "n_flagged": 16,
+        "false_positive_rate": 0.0054
+      },
+      {
+        "group": "utilities",
+        "n_legitimate_txns": 2992,
+        "n_flagged": 4,
+        "false_positive_rate": 0.0013
+      }
+    ],
+    "geo_mismatch": [
+      {
+        "group": "1",
+        "n_legitimate_txns": 1487,
+        "n_flagged": 809,
+        "false_positive_rate": 0.544
+      },
+      {
+        "group": "0",
+        "n_legitimate_txns": 28395,
+        "n_flagged": 86,
+        "false_positive_rate": 0.003
+      }
+    ],
+    "new_device": [
+      {
+        "group": "1",
+        "n_legitimate_txns": 2346,
+        "n_flagged": 164,
+        "false_positive_rate": 0.0699
+      },
+      {
+        "group": "0",
+        "n_legitimate_txns": 27536,
+        "n_flagged": 731,
+        "false_positive_rate": 0.0265
+      }
+    ]
+  },
+  "flags": [
+    {
+      "group_col": "merchant_category",
+      "spread_pct_points": 6.7,
+      "message": ">5-point FPR spread across 'merchant_category' groups (6.7 points) -- worth investigating before production use, not just a modeling footnote."
+    },
+    {
+      "group_col": "geo_mismatch",
+      "spread_pct_points": 54.1,
+      "message": ">5-point FPR spread across 'geo_mismatch' groups (54.1 points) -- worth investigating before production use, not just a modeling footnote."
+    }
+  ]
+}

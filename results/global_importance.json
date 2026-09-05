@@ -1,0 +1,74 @@
+[
+  {
+    "feature": "geo_mismatch",
+    "importance": 0.29136
+  },
+  {
+    "feature": "new_device",
+    "importance": 0.16202
+  },
+  {
+    "feature": "is_night",
+    "importance": 0.09541
+  },
+  {
+    "feature": "merchant_category_jewelry",
+    "importance": 0.03092
+  },
+  {
+    "feature": "merchant_category_pharmacy",
+    "importance": 0.01428
+  },
+  {
+    "feature": "merchant_category_gas_station",
+    "importance": 0.00951
+  },
+  {
+    "feature": "merchant_category_restaurant",
+    "importance": 0.00821
+  },
+  {
+    "feature": "merchant_category_online_retail",
+    "importance": 0.00781
+  },
+  {
+    "feature": "merchant_category_utilities",
+    "importance": 0.00768
+  },
+  {
+    "feature": "merchant_category_entertainment",
+    "importance": 0.00529
+  },
+  {
+    "feature": "merchant_category_grocery",
+    "importance": 0.00524
+  },
+  {
+    "feature": "merchant_category_electronics",
+    "importance": 0.0044
+  },
+  {
+    "feature": "merchant_category_travel",
+    "importance": 0.00319
+  },
+  {
+    "feature": "hour_of_day",
+    "importance": 0.00081
+  },
+  {
+    "feature": "amount_zscore",
+    "importance": -0.0
+  },
+  {
+    "feature": "txn_velocity_1h",
+    "importance": -0.00017
+  },
+  {
+    "feature": "day_of_week",
+    "importance": -0.00099
+  },
+  {
+    "feature": "amount",
+    "importance": -0.0015
+  }
+]

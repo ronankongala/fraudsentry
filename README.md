@@ -252,31 +252,6 @@ defensible starting point for a model built on this feature set, and it
 is a considerably more useful thing to be able to discuss than the
 synthetic run's 85.6%.
 
-## Screenshots To Take When You Run the Real-Data Version
-
-`src/visualize.py` regenerates all five charts above from whatever
-data is in `results/` — so running it again after `train_models_real.py`
-+ `explainability_real.py` + `fairness_audit.py` will overwrite these
-with the real-IEEE-CIS versions. Beyond those five charts, it's worth
-capturing:
-
-1. **Terminal output of `data/load_ieee_cis.py`** — shows the real
-   download and mapping step, including the fraud rate it finds in
-   real data (compare it to the synthetic 0.45%).
-2. **Terminal output of `train_models_real.py`** — the real
-   recall-at-3%-FPR numbers, for direct comparison against the
-   synthetic run's 85.6%.
-3. **A SHAP summary/beeswarm plot**, if you want to go one step
-   further than this project's saved JSON output —
-   `shap.summary_plot(shap_values, X)` from `explainability_real.py`
-   produces the visual SHAP is best known for, and it's the single
-   most "this person knows explainable AI" chart you can put in a
-   README.
-4. **The real-data fairness disparity chart** (same `visualize.py`
-   output, rerun against real data) — genuinely the most important one
-   to update, since the synthetic version's finding is partly
-   circular by construction (see the caveat above).
-
 ---
 
 ## Project Structure

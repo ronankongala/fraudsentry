@@ -1,4 +1,4 @@
-# FraudSentry — Transaction Fraud Detection & Investigation Pipeline
+# FraudSentry - Transaction Fraud Detection & Investigation Pipeline
 
 A fraud-detection system built to genuinely address the technical gaps
 identified against a "Cyber Fraud Analyst II" job description: predictive

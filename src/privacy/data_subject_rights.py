@@ -19,12 +19,15 @@ own records), not the underlying raw transactions.csv, which is
 treated in this project as being subject to separate, longer-mandated
 financial recordkeeping retention (see dpia.md Section 4).
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import json
 import sqlite3
 from datetime import datetime, timezone
 
 import sys
-sys.path.insert(0, "/home/claude/fraudsentry/src")
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "src"))
 from case_tracking import DB_PATH, get_conn
 
 

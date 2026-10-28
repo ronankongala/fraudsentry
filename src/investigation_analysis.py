@@ -9,6 +9,9 @@ actual confirmed-fraud outputs rather than the ground-truth labels
 directly (i.e., this analyzes what the SYSTEM caught and confirmed,
 which is the realistic fraud-ops workflow).
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import sqlite3
 import pandas as pd
@@ -87,7 +90,7 @@ def write_case_narratives(cases: pd.DataFrame, features: pd.DataFrame, n=3):
 
 if __name__ == "__main__":
     cases = load_confirmed_fraud_cases()
-    features = pd.read_csv("/home/claude/fraudsentry/data/features.csv", parse_dates=["timestamp"])
+    features = pd.read_csv(os.path.join(PROJECT_ROOT, "data/features.csv"), parse_dates=["timestamp"])
 
     trends = trend_analysis(cases, features)
     print("=== Trend Analysis (confirmed fraud cases) ===")
@@ -100,8 +103,8 @@ if __name__ == "__main__":
         print(n["summary"])
         print(f"Recommended action: {n['recommended_action']}")
 
-    with open("/home/claude/fraudsentry/results/trend_analysis.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/trend_analysis.json"), "w") as f:
         json.dump(trends, f, indent=2, default=str)
-    with open("/home/claude/fraudsentry/results/case_narratives.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/case_narratives.json"), "w") as f:
         json.dump(narratives, f, indent=2)
     print("\nSaved: results/trend_analysis.json, results/case_narratives.json")

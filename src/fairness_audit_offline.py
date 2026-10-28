@@ -13,14 +13,17 @@ of results/test_scored_real.csv (XGBoost score, real-library pipeline).
 
 Run this any time after train_models.py has been run.
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import pandas as pd
 import numpy as np
 from sklearn.metrics import roc_curve
 
 SCORE_COL = "rf_score"
-TEST_SCORED_PATH = "/home/claude/fraudsentry/results/test_scored.csv"
-FEATURES_PATH = "/home/claude/fraudsentry/data/features.csv"
+TEST_SCORED_PATH = os.path.join(PROJECT_ROOT, "results/test_scored.csv")
+FEATURES_PATH = os.path.join(PROJECT_ROOT, "data/features.csv")
 TARGET_FPR = 0.03
 
 
@@ -81,7 +84,7 @@ def main():
                 print(f"  FLAG: {flag_msg}\n")
                 report["flags"].append({"group_col": group_col, "spread_pct_points": round(spread*100, 1), "message": flag_msg})
 
-    with open("/home/claude/fraudsentry/results/fairness_audit_synthetic.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/fairness_audit_synthetic.json"), "w") as f:
         json.dump(report, f, indent=2)
     print("Saved: results/fairness_audit_synthetic.json")
 

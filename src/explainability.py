@@ -22,6 +22,9 @@ substitutes that are honest, defensible alternatives:
      and in the README -- a production system would upgrade to SHAP's
      TreeExplainer for game-theoretically fair per-prediction attribution.
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import pickle
 import numpy as np
@@ -32,9 +35,9 @@ from feature_engineering import FEATURE_COLUMNS, CATEGORICAL_COLUMNS, LABEL_COLU
 
 
 def load_artifacts():
-    with open("/home/claude/fraudsentry/results/pipeline.pkl", "rb") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/pipeline.pkl"), "rb") as f:
         artifacts = pickle.load(f)
-    features = pd.read_csv("/home/claude/fraudsentry/data/features.csv", parse_dates=["timestamp"])
+    features = pd.read_csv(os.path.join(PROJECT_ROOT, "data/features.csv"), parse_dates=["timestamp"])
     return artifacts, features
 
 
@@ -93,11 +96,11 @@ if __name__ == "__main__":
     for name, score in ranked[:10]:
         print(f"  {name:30s} {score:+.4f}")
 
-    with open("/home/claude/fraudsentry/results/global_importance.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/global_importance.json"), "w") as f:
         json.dump([{"feature": n, "importance": round(float(s), 5)} for n, s in ranked], f, indent=2)
 
     stats = compute_population_stats(features)
-    scored = pd.read_csv("/home/claude/fraudsentry/results/test_scored.csv")
+    scored = pd.read_csv(os.path.join(PROJECT_ROOT, "results/test_scored.csv"))
     top_alerts = scored.sort_values("rf_score", ascending=False).head(5)
 
     print("\n=== Sample local explanations (top 5 highest-risk test alerts) ===")
@@ -109,5 +112,5 @@ if __name__ == "__main__":
                               "rf_score": round(float(row["rf_score"]), 4), "top_factors": exp})
         print(f"  {row['transaction_id']} (actual_fraud={row['is_fraud']}, score={row['rf_score']:.3f}): {exp}")
 
-    with open("/home/claude/fraudsentry/results/sample_explanations.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/sample_explanations.json"), "w") as f:
         json.dump(explanations, f, indent=2)

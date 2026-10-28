@@ -20,6 +20,9 @@ understanding of alert lifecycle, triage, and audit-trail requirements --
 it is not a substitute for hands-on experience with those specific
 commercial platforms, which this project does not claim.
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import sqlite3
 from datetime import datetime, timezone
@@ -27,7 +30,7 @@ from datetime import datetime, timezone
 def _now():
     return datetime.now(timezone.utc).isoformat()
 
-DB_PATH = "/home/claude/fraudsentry/results/fraudsentry.db"
+DB_PATH = os.path.join(PROJECT_ROOT, "results/fraudsentry.db")
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS alerts (
@@ -116,8 +119,8 @@ if __name__ == "__main__":
     import pandas as pd
     from explainability import compute_population_stats, local_explanation
 
-    scored = pd.read_csv("/home/claude/fraudsentry/results/test_scored.csv")
-    features = pd.read_csv("/home/claude/fraudsentry/data/features.csv", parse_dates=["timestamp"])
+    scored = pd.read_csv(os.path.join(PROJECT_ROOT, "results/test_scored.csv"))
+    features = pd.read_csv(os.path.join(PROJECT_ROOT, "data/features.csv"), parse_dates=["timestamp"])
     stats = compute_population_stats(features)
 
     conn = get_conn()

@@ -17,6 +17,9 @@ differs. If real data becomes available later (e.g. via Kaggle on a
 machine with internet access), this generator can be swapped out for a
 loader with no other pipeline changes required.
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
@@ -116,7 +119,7 @@ def simulate():
 
 if __name__ == "__main__":
     df = simulate()
-    out_path = "/home/claude/fraudsentry/data/transactions.csv"
+    out_path = os.path.join(PROJECT_ROOT, "data/transactions.csv")
     df.to_csv(out_path, index=False)
     print(f"Wrote {len(df):,} transactions to {out_path}")
     print(f"Fraud rate: {df['is_fraud'].mean()*100:.3f}%  ({df['is_fraud'].sum():,} fraudulent)")

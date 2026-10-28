@@ -18,6 +18,9 @@ would leak future transaction patterns into training and overstate
 performance. Real fraud systems are evaluated this way because fraud
 patterns drift over time.
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import numpy as np
 import pandas as pd
@@ -35,7 +38,7 @@ from feature_engineering import FEATURE_COLUMNS, CATEGORICAL_COLUMNS, LABEL_COLU
 from smote import smote_balance
 
 
-def load_features(path="/home/claude/fraudsentry/data/features.csv"):
+def load_features(path=os.path.join(PROJECT_ROOT, "data/features.csv")):
     df = pd.read_csv(path, parse_dates=["timestamp"])
     return df.sort_values("timestamp").reset_index(drop=True)
 
@@ -138,7 +141,7 @@ def main():
     for r in results:
         print(json.dumps(r, indent=2))
 
-    with open("/home/claude/fraudsentry/results/metrics.json", "w") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/metrics.json"), "w") as f:
         json.dump(results, f, indent=2)
 
     # Save the best supervised model + preprocessor + test predictions for downstream
@@ -147,7 +150,7 @@ def main():
     print(f"\nBest supervised model by recall@3%FPR: {best['model']}")
 
     import pickle
-    with open("/home/claude/fraudsentry/results/pipeline.pkl", "wb") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/pipeline.pkl"), "wb") as f:
         pickle.dump({
             "preprocessor": pre,
             "rf_model": rf,
@@ -164,7 +167,7 @@ def main():
     test_out["rf_score"] = rf_scores
     test_out["gb_score"] = gb_scores
     test_out["iso_score"] = iso_scores
-    test_out.to_csv("/home/claude/fraudsentry/results/test_scored.csv", index=False)
+    test_out.to_csv(os.path.join(PROJECT_ROOT, "results/test_scored.csv"), index=False)
     print("Saved: results/metrics.json, results/pipeline.pkl, results/test_scored.csv")
 
 

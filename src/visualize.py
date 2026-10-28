@@ -8,6 +8,9 @@ Run after train_models.py + explainability.py + fairness_audit_offline.py
 (offline/synthetic pipeline) or the _real equivalents (point SCORE_COL /
 paths at the _real files -- see the REAL_DATA_MODE flag below).
 """
+import os
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import json
 import pickle
 import numpy as np
@@ -17,7 +20,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, confusion_matrix
 
-PLOTS_DIR = "/home/claude/fraudsentry/results/plots"
+PLOTS_DIR = os.path.join(PROJECT_ROOT, "results/plots")
 import os
 os.makedirs(PLOTS_DIR, exist_ok=True)
 
@@ -29,8 +32,8 @@ SCORE_COLS = {
     "Gradient Boosting": "gb_score",
     "Isolation Forest": "iso_score",
 }
-TEST_SCORED_PATH = "/home/claude/fraudsentry/results/test_scored.csv"
-METRICS_PATH = "/home/claude/fraudsentry/results/metrics.json"
+TEST_SCORED_PATH = os.path.join(PROJECT_ROOT, "results/test_scored.csv")
+METRICS_PATH = os.path.join(PROJECT_ROOT, "results/metrics.json")
 
 
 def plot_roc_curves():
@@ -85,7 +88,7 @@ def plot_metrics_comparison():
 
 
 def plot_feature_importance():
-    with open("/home/claude/fraudsentry/results/global_importance.json") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/global_importance.json")) as f:
         importance = json.load(f)
     top = importance[:8]
     names = [d["feature"] for d in top]
@@ -103,7 +106,7 @@ def plot_feature_importance():
 
 
 def plot_fairness_disparity():
-    with open("/home/claude/fraudsentry/results/fairness_audit_synthetic.json") as f:
+    with open(os.path.join(PROJECT_ROOT, "results/fairness_audit_synthetic.json")) as f:
         audit = json.load(f)
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
